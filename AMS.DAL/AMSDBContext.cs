@@ -1,14 +1,17 @@
 ﻿using AMS.Model.Entity;
 using AMS.Util;
+using AMS.Util.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System;
 
 namespace AMS.DAL
 {
-    public class AMSDBContext : DbContext,IDisposable
+    public class AMSDBContext : DbContext, IDisposable
     {
-        public AMSDBContext(DbContextOptions<AMSDBContext> options) : base(options) { }       
-
+        public AMSDBContext(DbContextOptions<AMSDBContext> options) : base(options)
+        {
+        }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Menu> Menus { get; set; }
         public DbSet<Role> Roles { get; set; }
