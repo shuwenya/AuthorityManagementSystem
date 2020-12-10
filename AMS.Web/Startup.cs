@@ -38,7 +38,8 @@ namespace AMS.Web
             {
                 //添加全局异常过滤器
                 options.Filters.Add<GlobalExceptionFilter>();
-                //options.ModelMetadataDetailsProviders.Add(new ModelBindingMetadataProvider());
+                //Controller Model Binding 处理
+                options.ModelMetadataDetailsProviders.Add(new ModelBindingMetadataProvider());
             }).AddNewtonsoftJson(options =>
             {
                 //返回数据首字母不小写，CamelCasePropertyNamesContractResolver是小写
